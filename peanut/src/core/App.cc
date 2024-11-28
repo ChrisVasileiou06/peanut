@@ -17,6 +17,24 @@
  * along with peanut.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-int main(int argc, char** argv){
-    return 0;
+
+#include "core/App.h"
+
+namespace peanut{
+    App::~App(){
+        delete this;
+    }
+
+    void App::init() noexcept{
+        if(this->_init_count > 0){
+            return;
+        }
+
+        this->_init_count++;
+        return;
+    }
+
+    std::string App::get_version() noexcept{
+        return PEANUT_VERSION;
+    }
 }

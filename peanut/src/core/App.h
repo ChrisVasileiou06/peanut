@@ -17,6 +17,28 @@
  * along with peanut.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-int main(int argc, char** argv){
-    return 0;
+
+#ifndef PEANUT_APP_H_
+#define PEANUT_APP_H_
+
+#include "Pch.h"
+
+#include "core/Defines.h"
+
+namespace peanut{
+    class App{
+    public:
+        App() = default;
+
+        ~App();
+
+        void init() noexcept;
+
+        std::string get_version() noexcept;
+
+    private:
+        uint8_t _init_count = 0;
+    };
 }
+
+#endif // PEANUT_APP_H_

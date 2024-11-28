@@ -17,6 +17,20 @@
  * along with peanut.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-int main(int argc, char** argv){
-    return 0;
-}
+
+#ifndef PEANUT_TYPEDEF_H_
+#define PEANUT_TYPEDEF_H_
+
+#include "Pch.h"
+
+#define PEANUT_NO_ERR uint16_t(0)
+#define PEANUT_WARNING uint16_t(1)
+#define PEANUT_ERROR uint16_t(2)
+
+#ifdef PEANUT_BUILD_TYPE_RELEASE
+    #define PEANUT_VERSION "2024.1"
+#else
+    #define PEANUT_VERSION "2024.1-dev"
+#endif
+
+#endif // PEANUT_TYPEDEF_H_
